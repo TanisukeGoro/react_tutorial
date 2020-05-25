@@ -13,7 +13,8 @@ const BookListCard = styled.div`
 const Booklist = props => {
   const [bookData, setBookData ] = useState(null)
   useEffect(() => {
-    const results = props.getData?.(props.language).then(response => {setBookData(response); console.log('response :>> ', response);});
+    const results = props.getData?.(props.language).then(response => {setBookData(response)
+    });
   }, [props])  
   return (
     <div style={ { pading: 'auto' } }>

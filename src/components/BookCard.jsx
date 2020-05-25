@@ -4,6 +4,8 @@ import styled from 'styled-components';
 
 const StyledRoot = styled.div`
   padding: 50px 12px;
+  max-width: 400px;
+  height: 500px;
 `
 
 const StyledContainer = styled.div`
@@ -12,11 +14,16 @@ const StyledContainer = styled.div`
   margin: auto;
 `
 
-const StyledPhoto = styled.img`
+const PhotoContainer = styled.div`
+  text-align: center;
+`
+
+const Photo = styled.img`
   width: 100%;
   height: 100%;
   max-width:150px;
   object-fit: cover;
+  align-items: center;
   border: ${(props) => `1px solid #000`};
 `
 
@@ -25,7 +32,7 @@ const Title = styled.h2`
   font-weight: 300;
 `
 
-const Date = styled.div`
+const Authors = styled.div`
   color: #ccc;
   font-weight: 300;
   margin: 6px 0;
@@ -56,18 +63,18 @@ const BookCard = ({
   img,
   description
 }) => (
-  <div style={{ color: '#fff' }}>
-    <StyledRoot>
-      <StyledContainer>
-        <StyledPhoto src={ img } />
-        <Title>{ title }</Title>
-        <Date>{ authors }</Date>
-        <Description>{description}</Description>
-        <ActionButton>0 Comments</ActionButton>
-        <ActionButton>0 Likes</ActionButton>
-        <ActionButton>0 Views</ActionButton>
-      </StyledContainer>
-    </StyledRoot>
-  </div>
+  <StyledRoot>
+    <StyledContainer>
+      <PhotoContainer>
+        <Photo src={ img } />
+      </PhotoContainer>
+      <Title>{ title }</Title>
+      <Authors>{ authors }</Authors>
+      <Description>{description}</Description>
+      <ActionButton>0 Comments</ActionButton>
+      <ActionButton>0 Likes</ActionButton>
+      <ActionButton>0 Views</ActionButton>
+    </StyledContainer>
+  </StyledRoot>
 )
 export default BookCard

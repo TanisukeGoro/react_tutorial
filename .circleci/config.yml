@@ -5,15 +5,15 @@ jobs:
       - image: circleci/node:8.11.2
     parallelism: 1
     working_directory: ~/react-application
-  steps:
-    - checkout
-    - attach_workspace:
-        at: ~/react-application
-    - run: yarn install
-    - run: yarn build
-    - persist_to_workspace:
-        root: .
-        paths: dist
+    steps:
+      - checkout
+      - attach_workspace:
+          at: ~/react-application
+      - run: yarn install
+      - run: yarn build
+      - persist_to_workspace:
+          root: .
+          paths: dist
   deploy:
     docker:
       - image: circleci/golang:1.9.6

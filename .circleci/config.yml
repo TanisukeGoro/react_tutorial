@@ -20,7 +20,7 @@ jobs:
     steps:
       - checkout
       - attach_workspace:
-          at: /build
+          at: /react-application/build
       - restore_cache:
           key: v1-pkg-cache
       - run: go get -v github.com/bep/s3deploy

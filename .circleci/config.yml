@@ -50,7 +50,7 @@ jobs:
     executor:
       name: ci
     steps:
-      - checkoutp
+      - checkout
       - yarn-install
       - yarn-build
       - persist-build

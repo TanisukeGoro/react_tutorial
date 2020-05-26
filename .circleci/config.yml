@@ -20,7 +20,7 @@ jobs:
     steps:
       - checkout
       - attach_workspace:
-          at: ~/react-application/build
+          at: ~/react-application
       - restore_cache:
           key: v1-pkg-cache
       - run: go get -v github.com/bep/s3deploy
@@ -47,3 +47,4 @@ workflows:
             branches:
               only:
                 - master
+presist_to_workspaceでrootを指定すると

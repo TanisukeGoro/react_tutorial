@@ -20,7 +20,7 @@ commands:
   attach-build:
     steps:
       - attach_workspace:
-          at: ~/workspace
+          at: ~/workspace/build
 
   yarn-install:
     steps:

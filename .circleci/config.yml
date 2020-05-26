@@ -10,7 +10,7 @@ jobs:
       - run: yarn install
       - run: yarn build
       - persist_to_workspace:
-          root: .
+          root: .   # ~/react-applicationの build がアタッチされる
           paths: build
   deploy:
     docker:
@@ -20,7 +20,7 @@ jobs:
     steps:
       - checkout
       - attach_workspace:
-          at: /react-application/build
+          at: ~/react-application/build
       - restore_cache:
           key: v1-pkg-cache
       - run: go get -v github.com/bep/s3deploy

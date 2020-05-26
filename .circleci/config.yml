@@ -20,7 +20,7 @@ commands:
   attach-build:
     steps:
       - attach_workspace:
-          at: ~/workspace/build
+          at: ~/workspace
 
   yarn-install:
     steps:
@@ -55,7 +55,6 @@ jobs:
     executor:
       name: cd
     steps:
-      - checkout
       - attach-build
       - deploy-to-s3
 
